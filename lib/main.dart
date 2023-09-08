@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:my_app/homeScree.dart';
 import 'package:my_app/input.dart';
 
 void main() => runApp(MyApp());
@@ -11,7 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: InputForm(),
+      initialRoute: homeScreen.id,
+      routes: {
+        homeScreen.id: (context) => homeScreen(),
+        InputForm.id: (context) => InputForm()
+      },
+      // home: homeScreen(),
     );
   }
 }
